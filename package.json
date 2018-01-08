@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^4.0.0-beta.3",
     "firebase": "^4.8.1",
     "lodash": "^4.17.4",
     "react": "^16.2.0",

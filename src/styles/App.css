@@ -6,7 +6,7 @@ body {
 
 .form-signin {
     max-width: 330px;
-    margin: 0 auto;
+    margin: auto;
 }
 .form-signin .form-signin-heading,
 .form-signin .checkbox {
@@ -32,4 +32,13 @@ body {
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+}
+
+.create-account {
+    float: right;
+    margin-bottom: 10px;
+}
+
+.login-button {
+    width: 100%;
 }
