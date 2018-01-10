@@ -1,8 +1,9 @@
 import React from 'react';
+import { createAccount } from '../actions/userActions';
+
 import InputField from '../components/inputField';
 
-
-const LoginContainer = props => {
+const createAccountForm = props => {
 
   function setEmail(event) {
     event.preventDefault();
@@ -14,6 +15,11 @@ const LoginContainer = props => {
     props.password(event);
   }
 
+  function setConfirmPassword(event) {
+    event.preventDefault();
+    props.confirmPassword(event);
+  }
+
   return (
       <div>
         <InputField
@@ -23,12 +29,19 @@ const LoginContainer = props => {
             inputAction={(event) => setEmail(event)}/>
 
         <InputField
-            id="password"
+            id="confirmPassword1"
             type="password"
             label="Password"
             inputAction={(event) => setPassword(event)}/>
+
+        <InputField
+            id="confirmPassword2"
+            type="password"
+            label="Confirm Password"
+            inputAction={(event) => setConfirmPassword(event)}/>
       </div>
   )
+
 };
 
-export default LoginContainer;
+export default createAccountForm;

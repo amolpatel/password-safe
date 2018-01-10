@@ -19,8 +19,9 @@ import thunk from 'redux-thunk'
 // CONTAINERS
 import Loading from './containers/loading';
 import Authenticated from './containers/authenticated';
-import createAccount from './containers/createAccount';
-import login from './containers/homePage';
+import CreateAccount from './containers/createAccount';
+import Login from './containers/homePage';
+import AccountPage from './containers/accountPage';
 
 const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
@@ -29,10 +30,10 @@ ReactDOM.render(
       <BrowserRouter>
         <Loading>
           <Switch>
-            <Route path="/createAccount" component={createAccount} />
-            <Route path="/login" component={login} />
+            <Route path="/createAccount" component={CreateAccount} />
+            <Route path="/login" component={Login} />
             <Authenticated>
-
+              <Route exact path="/" component={AccountPage} />
             </Authenticated>
           </Switch>
         </Loading>

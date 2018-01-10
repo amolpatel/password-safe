@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import { login, getUser } from '../actions/userActions';
 
 import InputField from '../components/inputField';
-import LoginContainer from '../components/loginContainer';
+import LoginForm from '../components/loginForm';
+import ErrorAlert from '../components/errorAlert';
 
 
 
@@ -47,10 +48,6 @@ class Login extends Component {
     });
   }
 
-  createAccountHandler() {
-
-  }
-
   render() {
     const errStyle = {
       borderColor: 'red'
@@ -60,8 +57,9 @@ class Login extends Component {
           <div className="form-signin">
             <h2 className="form-signin-heading">PasswordSafe</h2>
 
-            <LoginContainer email={this.setEmail.bind(this)} password={this.setPassword.bind(this)}/>
+            <LoginForm email={this.setEmail.bind(this)} password={this.setPassword.bind(this)}/>
 
+            {this.state.error ? <ErrorAlert>Please check the fields above</ErrorAlert>: null}
 
             <a className="create-account" href="/createAccount">Create Account</a>
             <br/>
